@@ -128,15 +128,15 @@ static void opcode_0x8000(struct chip8 *chip8, uint16_t opcode)
         break;
 
     case 0x01:
-        chip8->registers.V[x] = chip8->registers.V[x] | chip8->registers.V[y];
+        chip8->registers.V[x] |= chip8->registers.V[y];
         break;
 
     case 0x02:
-        chip8->registers.V[x] = chip8->registers.V[x] & chip8->registers.V[y];
+        chip8->registers.V[x] &= chip8->registers.V[y];
         break;
 
     case 0x03:
-        chip8->registers.V[x] = chip8->registers.V[x] ^ chip8->registers.V[y];
+        chip8->registers.V[x] ^= chip8->registers.V[y];
         break;
 
     case 0x04:
@@ -158,7 +158,7 @@ static void opcode_0x8000(struct chip8 *chip8, uint16_t opcode)
         {
             chip8->registers.V[0x0F] = 1;
         }
-        chip8->registers.V[x] = chip8->registers.V[x] - chip8->registers.V[y];
+        chip8->registers.V[x] -= chip8->registers.V[y];
         break;
 
     case 0x06:
