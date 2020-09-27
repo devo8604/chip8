@@ -130,7 +130,7 @@ int main(int argc, char **argv)
 		if (chip8.registers.delay_timer > 0)
 		{
 			// Try to appox 60HZ ???
-			usleep(50);
+			usleep(100);
 			chip8.registers.delay_timer -= 1;
 		}
 
